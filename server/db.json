@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "userName": "Manoranjan Sahoo",
+      "phone": "7978765615",
+      "email": "ms2313535@gmail.com",
+      "address": "Badagada Brit Colony",
+      "id": 1
+    },
+    {
+      "userName": "Anil Dash",
+      "phone": "9874166211",
+      "email": "anilDash@gmail.com",
+      "address": "kalpana",
+      "id": 2
+    }
+  ]
+}

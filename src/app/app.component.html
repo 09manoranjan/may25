@@ -1,0 +1,43 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h2>Welcome to {{title}} !</h2><br>
+  <h2>User Form</h2></div><br>
+  
+  <div class="col-sm-8" id="secondDiv">
+  <form #userForm="ngForm"> 
+    <label class="form-label">Name</label><input type="text" class="form-control" name="userName" [(ngModel)]="userObj.userName"><br>
+    <label class="form-label">Phone Number</label><input type="text" class="form-control" name="phone" [(ngModel)]="userObj.phone">
+    <div id="emailHelp" class="form-text">We'll never share your Phone Number with anyone else.</div><br>
+    <label class="form-label">Email ID</label><input type="text" class="form-control" name="email" [(ngModel)]="userObj.email">
+    <div class="form-text">Your Email ID should be a Unique</div><br>
+    <label class="form-label">Address</label><input type="text" class="form-control" name="address" [(ngModel)]="userObj.address"><br>
+    <button type="button" class="btn btn-primary" *ngIf="!showUpdate" (click)="addData(userForm.value);userForm.reset()">Add User</button>&nbsp;
+    <button type="button" class="btn btn-info" *ngIf="showUpdate" (click)="updateData();userForm.reset()">Update Complete</button>
+  </form>
+  <br>
+  <div style="text-align:center"><br>
+    <h2>User Data</h2></div><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Address</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of allUserdata">
+        <td>{{user.userName}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address}}</td>
+        <td><button (click)="editUser(user)" class="btn btn-warning">Edit</button></td>
+        <td><button (click)="deleteUser(user)" class="btn btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<router-outlet></router-outlet>
